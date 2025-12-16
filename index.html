@@ -288,16 +288,18 @@
     }
     ul.clean li{ margin:8px 0; }
 
-    /* EXPERIENCE (flags + logos) */
     .expGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr); /* USA | Argentina | Italy */
+    gap:14px;
     }
 
-    @media (max-width: 900px){
-      .expGrid{ grid-template-columns: 1fr; }
+    @media (max-width: 1000px){
+    .expGrid{
+        grid-template-columns: 1fr; /* stack on mobile */
     }
+    }
+
 
     .expCard{
       border:1px solid var(--line);
