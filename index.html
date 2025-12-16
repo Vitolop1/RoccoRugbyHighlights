@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rocco Loprestti | Rugby Highlights & Player Profile</title>
-  <meta name="description" content="Rocco Loprestti rugby highlights, player profile, experience, positions, skills, and contact." />
+  <title>Rocco Loprestti | Rugby Highlights</title>
 
   <style>
     :root{
@@ -13,7 +12,8 @@
       --text:#0f172a;
       --muted:#475569;
       --line:#dbe2ea;
-      --accent:#6cb4e4;
+      --accent:#6cb4e4;   /* celeste */
+      --accent2:#9fd3f6;
     }
 
     *{ box-sizing:border-box; }
@@ -25,9 +25,13 @@
       color: var(--text);
     }
 
+    /* NAV */
     header{
-      background:#fff;
-      border-bottom:1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
     }
 
     .nav{
@@ -37,7 +41,6 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      flex-wrap:wrap;
     }
 
     .nav h1{
@@ -46,20 +49,22 @@
       font-weight:800;
     }
 
-    .navLinks a{
+    .nav a{
       margin-left:12px;
       text-decoration:none;
       color:var(--accent);
-      font-weight:700;
-      font-size:14px;
+      font-weight:600;
     }
 
+    /* HERO */
     .hero{
       padding:80px 20px 60px;
       background:
-        linear-gradient(rgba(245,247,250,.9),rgba(245,247,250,.95)),
+        linear-gradient(
+          rgba(245,247,250,0.88),
+          rgba(245,247,250,0.95)
+        ),
         url("assets/IMG-20251216-WA0004.jpg") center/cover no-repeat;
-      border-bottom:1px solid var(--line);
     }
 
     .container{
@@ -68,66 +73,58 @@
     }
 
     .hero h2{
-      font-size:40px;
+      font-size:38px;
       margin:0 0 10px;
       font-weight:900;
     }
 
     .hero p{
-      max-width:720px;
+      font-size:17px;
       color:var(--muted);
-      line-height:1.6;
+      max-width:700px;
     }
 
-    .tagRow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:12px;
-    }
-
-    .tag{
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#fff;
-      font-weight:700;
-    }
-
-    .btnRow{
-      margin-top:14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:10px 14px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:#fff;
-      text-decoration:none;
-      font-weight:800;
-      color:var(--text);
-    }
-
-    .btnPrimary{
-      background:var(--accent);
-      color:#06233a;
-    }
-
+    /* CARDS */
     .card{
-      background:#fff;
+      background:var(--card);
       border:1px solid var(--line);
       border-radius:16px;
       padding:20px;
-      margin-top:24px;
+      margin-top:20px;
     }
 
+    .section{
+      margin:40px 0;
+    }
+
+    .section h3{
+      font-size:24px;
+      margin-bottom:14px;
+    }
+
+    /* PROFILE HEADER WITH FACE PHOTO */
+    .profileHeader{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .profileFace{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid var(--accent);
+      box-shadow:0 10px 25px rgba(0,0,0,.15);
+      background:#fff;
+    }
+
+    /* FACTS */
     .facts{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
       gap:14px;
       margin-top:16px;
     }
@@ -139,75 +136,23 @@
       background:#f9fbfd;
     }
 
-    .fact b{
-      display:block;
-      margin-bottom:6px;
-      font-size:13px;
-    }
-
-    .fact span{
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.45;
-    }
-
-    /* PROFILE LAYOUT */
-    .profileLayout{
-      display:grid;
-      grid-template-columns:280px 1fr;
-      gap:24px;
-      align-items:start;
-    }
-
-    .profilePhoto{
-      width:100%;
-      aspect-ratio:1/1;
-      object-fit:cover;
-      border-radius:18px;
-      border:2px solid var(--line);
-      box-shadow:0 15px 30px rgba(0,0,0,.15);
-    }
-
-    @media(max-width:900px){
-      .profileLayout{ grid-template-columns:1fr; }
-      .profilePhoto{ max-width:260px; margin:auto; }
-    }
-
-    .section{
-      margin:48px 0;
-    }
-
-    .sectionTitle{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      margin-bottom:12px;
-      flex-wrap:wrap;
-    }
-
-    .sectionTitle h3{
-      margin:0;
-      font-size:24px;
-    }
-
-    .hint{
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    ul.clean{
-      padding-left:18px;
-      color:var(--muted);
-    }
-
-    .videoWrap{
-      border:1px solid var(--line);
+    /* VIDEO */
+    .video{
+      position:relative;
+      padding-top:56.25%;
       border-radius:16px;
       overflow:hidden;
+      border:1px solid var(--line);
     }
 
-    video{ width:100%; background:#000; }
+    .video iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
 
+    /* GALLERY */
     .gallery{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -222,12 +167,21 @@
       border:1px solid var(--line);
     }
 
+    /* FOOTER */
     footer{
       border-top:1px solid var(--line);
       padding:20px;
       text-align:center;
       color:var(--muted);
-      margin-top:50px;
+      font-size:14px;
+      margin-top:40px;
+    }
+
+    @media (max-width:600px){
+      .profileFace{
+        width:110px;
+        height:110px;
+      }
     }
   </style>
 </head>
@@ -237,9 +191,8 @@
 <header>
   <div class="nav">
     <h1>Rocco Loprestti</h1>
-    <div class="navLinks">
+    <div>
       <a href="#profile">Profile</a>
-      <a href="#experience">Experience</a>
       <a href="#highlights">Highlights</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
@@ -251,96 +204,75 @@
   <div class="container">
     <h2>Rocco Loprestti</h2>
     <p>
-      Rugby player with long-term development since 2012. Versatile across forward positions and center,
-      with strong physical presence, reliable defense, and goal-kicking ability.
+      Versatile rugby player with experience across forward and midfield positions.
+      Strong physical presence, reliable defender, and capable goal kicker.
     </p>
-
-    <div class="tagRow">
-      <span class="tag">Prop</span>
-      <span class="tag">Second Row</span>
-      <span class="tag">Back Row</span>
-      <span class="tag">Center</span>
-      <span class="tag">Goal Kicker</span>
-    </div>
-
-    <div class="btnRow">
-      <a class="btn btnPrimary" href="#highlights">Watch Highlights</a>
-      <a class="btn" href="#contact">Contact</a>
-    </div>
   </div>
 </section>
 
 <main class="container">
 
-<section id="profile" class="card">
-  <h3>Player Profile</h3>
-  <p class="hint">Professional overview for coaches and recruiters</p>
+  <!-- PLAYER PROFILE -->
+  <section id="profile" class="card">
+    <div class="profileHeader">
+      <h3 style="margin:0;">Player Profile</h3>
 
-  <div class="profileLayout">
-    <img src="assets/PLAYERPROFILE.jpg" class="profilePhoto" alt="Rocco Loprestti">
+      <!-- FOTO DE PERFIL (CARA) -->
+      <!-- ⚠️ Si tu archivo NO es .jpg, cambiá SOLO la extensión -->
+      <img
+        class="profileFace"
+        src="assets/PLAYERPROFILE.jpg"
+        alt="Rocco Loprestti profile photo">
+    </div>
 
     <div class="facts">
-      <div class="fact"><b>Date of Birth</b><span>07/06/2009</span></div>
-      <div class="fact"><b>Height</b><span>1.84 m (6’1”)</span></div>
-      <div class="fact"><b>Weight</b><span>97 kg</span></div>
-      <div class="fact"><b>Positions</b><span>Prop, Second Row, Back Row, Center</span></div>
-      <div class="fact"><b>School</b><span>Ardrey Kell High School</span></div>
-      <div class="fact"><b>Skills</b><span>In-game kicking, goal kicking, physical defense</span></div>
+      <div class="fact"><b>Date of Birth:</b><br>07/06/2009</div>
+      <div class="fact"><b>Height:</b><br>1.84 m (6’1”)</div>
+      <div class="fact"><b>Weight:</b><br>97 kg</div>
+      <div class="fact"><b>Positions:</b><br>Prop, Second Row, Back Row, Center</div>
+      <div class="fact"><b>Clubs:</b><br>2012–2024 • Cardinals Club (2025–)</div>
+      <div class="fact"><b>School:</b><br>Ardrey Kell High School</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="experience" class="section">
-  <div class="sectionTitle">
-    <h3>Rugby Experience (by Country)</h3>
-  </div>
-
-  <div class="profileLayout">
-    <div class="card">
-      <h4>United States</h4>
-      <ul class="clean">
-        <li><b>Cardinals Club</b> — 2025–present</li>
-        <li><b>Ardrey Kell High School</b></li>
-      </ul>
+  <!-- HIGHLIGHTS -->
+  <section id="highlights" class="section">
+    <h3>Highlights</h3>
+    <div class="video">
+      <!-- CAMBIÁ VIDEO_ID POR EL REAL -->
+      <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
     </div>
+  </section>
 
-    <div class="card">
-      <h4>Argentina</h4>
-      <ul class="clean">
-        <li><b>Gimnasia y Tiro de Salta</b> — 2012–2024</li>
-      </ul>
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <h3>Photo Gallery</h3>
+    <div class="gallery">
+      <img src="assets/IMG-20251216-WA0001.jpg" alt="Rocco rugby action">
+      <img src="assets/IMG-20251216-WA0005.jpg" alt="Rocco contact play">
+      <img src="assets/IMG-20251216-WA0006.jpg" alt="Rocco match action">
+      <img src="assets/IMG-20251216-WA0012.jpg" alt="Rocco tackle">
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="highlights" class="section">
-  <h3>Highlights</h3>
-  <div class="videoWrap">
-    <video controls>
-      <source src="assets/Rocco%20Highlights%20Rugby.mp4" type="video/mp4">
-    </video>
-  </div>
-</section>
-
-<section id="gallery" class="section">
-  <h3>Photo Gallery</h3>
-  <div class="gallery">
-    <img src="assets/IMG-20251216-WA0001.jpg">
-    <img src="assets/IMG-20251216-WA0005.jpg">
-    <img src="assets/IMG-20251216-WA0006.jpg">
-    <img src="assets/IMG-20251216-WA0012.jpg">
-  </div>
-</section>
-
-<section id="contact" class="card">
-  <h3>Contact</h3>
-  <p>Email: <a href="mailto:lopresttirocco@gmail.com">lopresttirocco@gmail.com</a></p>
-</section>
+  <!-- CONTACT -->
+  <section id="contact" class="section card">
+    <h3>Contact</h3>
+    <p>
+      Email:
+      <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a><br>
+      Instagram: @yourhandle
+    </p>
+  </section>
 
 </main>
 
 <footer>
-  © 2025 Rocco Loprestti • Rugby Profile
+  © 2025 Rocco Loprestti • Rugby Highlights
 </footer>
 
 </body>
