@@ -197,7 +197,7 @@
                 line-height: 1.45;
             }
 
-        /* PROFILE (BIG photo on the side, NOT a circle, NOT cropped) */
+        /* PROFILE */
         .profileLayout {
             display: grid;
             grid-template-columns: 420px 1fr;
@@ -310,6 +310,7 @@
                 margin: 8px 0;
             }
 
+        /* EXPERIENCE */
         .expGrid {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* USA | Argentina | Italy */
@@ -505,6 +506,19 @@
             font-weight: 900;
         }
 
+        /* FIX: missing grid2 layout */
+        .grid2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -526,7 +540,6 @@
                 <a href="#references">References</a>
                 <a href="#contact">Contact</a>
             </div>
-
         </div>
     </header>
 
@@ -536,7 +549,7 @@
                 <div>
                     <h2>Rocco Loprestti</h2>
                     <p>
-                        Rugby player with long-term development since 2012. Versatile across forward positions and also able to play Center.
+                        Rugby player with long-term development since 2012 (13+ years). Versatile across forward positions and also able to play Center.
                         Physical presence, reliable defense, and capable of kicking in open play and at goal.
                     </p>
 
@@ -555,12 +568,13 @@
                     <div class="miniFacts">
                         <div class="miniFact"><b>Date of Birth</b><span>07/06/2009</span></div>
                         <div class="miniFact"><b>Height</b><span>1.84 m (6’1”)</span></div>
-                        <div class="miniFact"><b>Weight</b><span>97 kg</span></div>
-                        <div class="miniFact"><b>Playing Since</b><span>2012</span></div>
+                        <div class="miniFact"><b>Weight</b><span>97 kg (214 lb)</span></div>
+                        <div class="miniFact"><b>Years Playing</b><span>13+ years (since 2012)</span></div>
                         <div class="miniFact"><b>Current Club</b><span>Cardinals Club (2025–present)</span></div>
                         <div class="miniFact"><b>School</b><span>Ardrey Kell High School</span></div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -582,18 +596,17 @@
                         <div class="fact"><b>Full Name</b><span>Rocco Loprestti</span></div>
                         <div class="fact"><b>Date of Birth</b><span>07/06/2009</span></div>
                         <div class="fact"><b>Height</b><span>1.84 m (6’1”)</span></div>
-                        <div class="fact"><b>Weight</b><span>97 kg</span></div>
-                        <div class="fact"><b>School</b><span>Ardrey Kell High School</span></div>
+                        <div class="fact"><b>Weight</b><span>97 kg (214 lb)</span></div>
+                        <div class="fact"><b>Years Playing</b><span>13+ years (since 2012)</span></div>
                         <div class="fact"><b>Kicking</b><span>Open-play kicking + Goal kicking (at the posts)</span></div>
                     </div>
 
                     <div class="fact" style="margin-top:14px;">
                         <b>Player Summary</b>
                         <span>
-                            Rocco is a versatile rugby player who adapts quickly both on and off the field. He is passionate about the game,
-                            brings energy and focus to every training session, and takes pride in being reliable under pressure.
-                            Known for his physical presence and work ethic, he contributes in contact, defense, and set-piece situations,
-                            while also offering a kicking option in open play and at goal.
+                            Rocco is a versatile rugby player who adapts quickly both on and off the field. Born in 2009, he is passionate about the game and brings
+                            energy, focus, and consistency to every training session and match. Known for his physical presence and strong work ethic, he contributes in contact,
+                            defense, and set-piece situations, while also offering a reliable kicking option in open play and at goal.
                         </span>
                     </div>
                 </div>
@@ -645,7 +658,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- POSITIONS -->
         <section id="positions" class="section">
@@ -740,15 +752,16 @@
                 <div class="card" style="margin-top:0;">
                     <h4 style="margin:0 0 8px;">Physical Profile</h4>
                     <div class="facts" style="margin-top:0;">
+                        <div class="fact"><b>Date of Birth</b><span>07/06/2009</span></div>
                         <div class="fact"><b>Height</b><span>1.84 m (6’1”)</span></div>
-                        <div class="fact"><b>Weight</b><span>97 kg</span></div>
+                        <div class="fact"><b>Weight</b><span>97 kg (214 lb)</span></div>
+                        <div class="fact"><b>Years Playing</b><span>13+ years (since 2012)</span></div>
                         <div class="fact"><b>Style</b><span>Physical and direct, effective in contact and defensive situations</span></div>
                         <div class="fact"><b>Strength Focus</b><span>Power, work rate, and consistency across phases</span></div>
                     </div>
                 </div>
             </div>
         </section>
-
 
         <!-- HONORS & ACHIEVEMENTS -->
         <section id="achievements" class="section">
@@ -886,6 +899,7 @@
                     </div>
                 </div>
 
+            </div>
         </section>
 
         <!-- HIGHLIGHTS (YOUTUBE) -->
@@ -933,7 +947,6 @@
                 <a href="https://youtu.be/Ytw_uyyUWYg?t=192" target="_blank">3:12</a>.
             </p>
         </section>
-
 
         <!-- VIDEO INDEX FOR COACHES -->
         <section id="video-index" class="section">
@@ -1025,8 +1038,6 @@
             </div>
         </section>
 
-        
-
         <!-- REFERENCES -->
         <section id="references" class="section card">
             <div class="sectionTitle">
@@ -1038,9 +1049,6 @@
                 References and additional match footage can be provided upon request.
             </p>
         </section>
-
-
-
 
         <!-- CONTACT -->
         <section id="contact" class="section card">
