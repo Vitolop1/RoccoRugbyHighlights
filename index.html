@@ -139,11 +139,36 @@
       margin-top:20px;
     }
 
-    .section{
-      margin:44px 0;
-      position:relative;
-      padding-bottom:44px; /* espacio para el separador */
-    }
+   /* SECTIONS + SEPARADOR */
+.section{
+  position: relative;
+  margin: 54px 0;
+  padding-bottom: 54px; /* espacio para la barra */
+}
+
+/* Barra celeste larga */
+.section::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  width:min(1100px, calc(100% - 40px));
+  height:10px;
+  border-radius:999px;
+  background: rgba(108,180,228,.75);
+  border: 1px solid rgba(108,180,228,.55);
+  box-shadow: 0 14px 34px rgba(108,180,228,.35);
+}
+
+/* sin línea finita */
+.section::after{ content:none; }
+
+/* no mostrar separador en la última sección del main */
+main.container section.section:last-child::before{
+  display:none;
+}
+
 
     .sectionTitle{
       display:flex;
@@ -166,44 +191,7 @@
       margin:0;
     }
 
- /* =========================
-   SEPARADOR ENTRE SECCIONES (solo barra celeste grande)
-   ========================= */
-
-.section{
-  position: relative;
-  margin: 54px 0;
-  padding-bottom: 54px; /* espacio para la barra */
-}
-
-/* Barra celeste larga (separador principal) */
-.section::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:18px;
-  transform:translateX(-50%);
-
-  width:min(1100px, calc(100% - 40px)); /* ancho de la página (alineado a container) */
-  height:10px;                          /* más “power” */
-  border-radius:999px;
-
-  background: rgba(108,180,228,.75);
-  border: 1px solid rgba(108,180,228,.55);
-  box-shadow: 0 14px 34px rgba(108,180,228,.35);
-}
-
-/* Eliminamos la línea finita */
-.section::after{
-  content:none;
-}
-
-/* No mostrar separador en la última sección del main */
-main.container > .section:last-of-type::before,
-main.container > section.section:last-of-type::before{
-  display:none;
-}
-
+ 
 
     /* FACTS */
     .facts{
